@@ -61,8 +61,8 @@ fn api_create_post(post: Json<NewPost>) -> String {
 
     let post = create_post(
         &connection,
-        &String::from("My nice title"),
-        &String::from("My nice body goes here"),
+        &post.title,
+        &post.body,
     );
 
     return serde_json::json!(post).to_string();
